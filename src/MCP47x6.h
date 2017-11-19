@@ -29,7 +29,7 @@
           +-----+
 
     Chip Marking:
-        i2c    00     01     10     11     bit 1+0
+        i2c    0x60   0x61   0x62   0x63
        4706    DBxx / DCxx / DDxx / DExx
        4716    DFxx / DGxx / DHxx / DJxx
        4726    DKxx / DLxx / DMxx / DPxx
@@ -54,7 +54,7 @@ class MCP47x6base {
     // defined but not used.
     enum powerdownmode_t { powerdownnot, powerdown1k, powerdown100k, powerdown500k };
 
-    // query the device for presents (not really. Just look if someone is at i2c adress)
+    // query the device (not really. Just look if someone is at i2c adress)
     boolean devicepresent(void);
 
     // by default, changes are only written to the volatile DAC register, so lost on power off/on
@@ -95,7 +95,7 @@ class MCP4706: public MCP47x6base {
       bits = 8;
     };
     MCP4706(uint8_t addr) {
-      bits = 12;
+      bits = 8;
     };
   protected:
     virtual const void setOutPutBytesDev(const int avalue);
