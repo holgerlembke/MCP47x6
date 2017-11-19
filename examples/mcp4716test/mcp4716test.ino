@@ -63,7 +63,7 @@ void loop() {
     i2c       100khz     400khz
     4706      12 Hz      34 Hz   
     4716      2.9 Hz     8 Hz
-    4726      0,7 Hz     1 Hz
+    4726      0.7 Hz     1 Hz
 */
 
 
